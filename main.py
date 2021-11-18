@@ -31,6 +31,16 @@ def ler_aporte():
         print("Valor inválido, tente novamente.")
         return ler_aporte()
 
+def ler_resposta():
+    response = input("Deseja realizar outra simulação?\n[1] Sim\n[2] Não\n> ")
+    if response == "1":
+        return 1
+    elif response == "2":
+        return 2
+    else:
+        print("Opção inválida, tente novamente.")
+        return ler_resposta()
+
 
 while True:
     print("--------------------------------")
@@ -91,7 +101,7 @@ while True:
     print("Liquido                  R$ {:.2f}".format(liquido))
     print("-----------------------------------")
 
-    prompt = int(input("Deseja realizar uma nova simulação?\n[1] Sim\n[2] Não\n> "))
+    prompt = ler_resposta()
     if prompt == 2:
         print("Obrigado por utilizar nosso simulador.")
         break
